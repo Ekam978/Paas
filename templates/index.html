@@ -1,0 +1,94 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        body{
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(203, 172, 225);
+        }
+
+        .gr{
+            background: linear-gradient(to right, rgb(255, 99, 232), #6464ff, #601460);
+            display: flex;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            padding-top: 10px;
+            border-radius: 20px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .main{
+            width: 100%;
+
+            background-color: rgb(242, 242, 242);
+            border-radius: 20px;
+            padding: 30px;
+        }
+        .main div{
+            text-align: left;
+            margin-left: 39%;
+            transform: translate(-38%, 0%);
+        }
+        .btn{
+            background: linear-gradient( to right,  rgb(255, 99, 232), #6464ff);
+            color: white;
+            border-radius: 20px;
+            margin-left: 30%;
+        }
+        h1{
+            
+            width: fit-content;
+            color: black;
+            font-family: 'Sacramento', cursive !important;
+
+        }
+        hr{
+            background: linear-gradient(to right, rgb(255, 99, 232), #6464ff, rgb(96, 20, 96));
+            padding-top: 5px;
+            border-radius: 20px;
+            width: 50%;
+            border-width: 0;
+            top: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <center class="row">
+        <H1>Welcome to Maths calc &nbsp; &nbsp;<img src="{{url_for('static', filename='calculator.png')}}" style="width: 40px;"></H1>
+        <hr>
+    </center>
+    <div class="gr col-lg-6 col-md-9 col-sm-12">
+        <div class="main container">
+            <div>
+                <form method="POST">
+                    <label>choose operation : </label>
+                    <select class="is-focused is-large" name="operation" style="height: 30;">
+                        <option value="choose operation">Choose Operation</option>
+                        <option value="simplify">Simplify</option>
+                        <option value="factor">Factor</option>
+                    </select>
+                    <br><br>
+                    <label>choose expression : </label>
+                    <input placeholder="expression" name="text">
+                    <br><br>
+                    <input type="submit" class="btn">
+                </form>
+                <p>Your equation is {{equation}} and the answer is {{result}}</p>
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
